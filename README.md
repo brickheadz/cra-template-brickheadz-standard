@@ -17,7 +17,7 @@ npx create-react-app your-project-name --template brickheadz-standard
 Or
 
 ```bash
-yarn create react-app your-project-name --template brickheadz-standard
+yarn create-react-app your-project-name --template brickheadz-standard
 ```
 
 `npx` command installs the most recent stable version of CRA from npm.
