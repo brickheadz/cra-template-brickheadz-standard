@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+[![npm version](https://badge.fury.io/js/cra-template-brickheadz-standard.svg)](https://badge.fury.io/js/cra-template-brickheadz-standard)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+![issues](https://img.shields.io/github/issues/brickheadz/cra-template-brickheadz-standard)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A quick start Redux + Node Sass and Linting Create React App template
+
+An opinionated quick start [Create React App](https://github.com/facebook/create-react-app) (CRA) _template_ with configured **Redux**, **Node Sass**, **React Router** and custom **ESlint** configuration.
+
+Original Create React App README available [here](./README_CRA.md)
+
+## Usage
+
+```bash
+npx create-react-app your-project-name --template brickheadz-standard
+```
+
+Or
+
+```bash
+yarn create react-app your-project-name --template brickheadz-standard
+```
+
+`npx` command installs the most recent stable version of CRA from npm.
+
+`--template` parameter points to this template, note that `cra-template-` prefix is omitted.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+- `yarn start` - runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `yarn test` - launches the test runner in the interactive watch mode.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- `yarn build` - builds the app for production to the `build` folder.
 
-### `yarn test`
+- `yarn eject` - exposes content of `react-script` package
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `yarn lint` - lints project files according to eslint rules, see below. Typical use case: continuous integration environments, Travis, CircleCI, etc.
 
-### `yarn build`
+- `yarn lint:fix` - same as `yarn lint`, but also fixes errors, when possible. Typical use case: local development environment, git hooks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Due to CRA template limitations (we can change only `scripts` and `dependencies` inside generated `package.json`) all configuration is done by adding config files where possible. Also no `devDependencies` for now, sorry (all `devDependencies` are inside `dependencies`).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Testing template locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To test the output of your template locally run
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npx create-react-app my-app --template file:/\path\to\file
+```
