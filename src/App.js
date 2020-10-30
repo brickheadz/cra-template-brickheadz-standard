@@ -1,16 +1,73 @@
 import React from 'react';
-import './App.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
+import { refreshToken } from './store/actions/authenticaton';
+import { LayoutBase } from './containers';
+
+const App = (props) => {
+  // Handle refresh token (if any)
+  const { refreshLogin, isLogged } = props;
+  refreshLogin();
+
+  let routes = (
+    <Switch>
+      <Route path="/auth">
+        <div>
+          <h2>/auth</h2>
+        </div>
+      </Route>
+      <Route path="/">
+        <div>
+          <h2>/</h2>
+        </div>
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+  );
+
+  if (isLogged) {
+    routes = (
+      <Switch>
+        <Route path="/my-orders">
+          <div>
+            <h2>/my-orders</h2>
+          </div>
+        </Route>
+        <Route path="/checkout">
+          <div>
+            <h2>/checkout</h2>
+          </div>
+        </Route>
+        <Route path="/logout">
+          <div>
+            <h2>/logout</h2>
+          </div>
+        </Route>
+        <Route path="/">
+          <div>
+            <h2>/</h2>
+          </div>
+        </Route>
+      </Switch>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+    <div>
+      <LayoutBase>{routes}</LayoutBase>
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return { isLogged: state.auth.isLogged };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    refreshLogin: () => dispatch(refreshToken()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
