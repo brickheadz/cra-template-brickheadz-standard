@@ -67,7 +67,8 @@
     "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp .eslintrc .prettierrc README.md README_CRA.md template/",
     "prepublishOnly": "yarn clean-files && yarn copy-files",
     "commit": "npx git-cz",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install-dev-dependencies": "node ./scripts/install-dev-dependencies.js"
   },
   "eslintConfig": {
     "extends": [
@@ -96,17 +97,5 @@
     "registry": "https://registry.npmjs.org/",
     "tag": "latest",
     "access": "public"
-  },
-  "devDependencies": {
-    "airbnb": "^0.0.2",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.5",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.0",
-    "prettier": "^2.1.2"
   }
 }
