@@ -40,11 +40,7 @@ In the project directory, you can run:
 
 - `yarn lint:fix` - same as `yarn lint`, but also fixes errors, when possible. Typical use case: local development environment, git hooks.
 
-Due to CRA template limitations (we can change only `scripts` and `dependencies` inside generated `package.json`) all configuration is done by adding config files where possible. Also no `devDependencies` for now, sorry.
-
-## Redux configuration
-
-The template provides basic Redux configuration with [feature based](https://redux.js.org/style-guide/style-guide/#structure-files-as-feature-folders-or-ducks) folder structure. You can use [Redux devtools browser extension](http://extension.remotedev.io/). Sample feature included in `src/features` folder, note technology agnostic `features` folder name. Based on Redux maintainers recommendation.
+Due to CRA template limitations (we can change only `scripts` and `dependencies` inside generated `package.json`) all configuration is done by adding config files where possible. Also no `devDependencies` for now, sorry (all `devDependencies` are inside `dependencies`).
 
 ## Testing template locally
 
