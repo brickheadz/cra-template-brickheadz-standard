@@ -29,11 +29,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexandr-g/cra-template-typescript-redux",
+    "url": "https://github.com/brickheadz/cra-template-brickheadz-standard",
     "directory": "/"
   },
   "bugs": {
-    "url": "https://github.com/alexandr-g/cra-template-typescript-redux/issues"
+    "url": "https://github.com/brickheadz/cra-template-brickheadz-standard/issues"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
